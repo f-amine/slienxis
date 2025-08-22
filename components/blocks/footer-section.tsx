@@ -1,8 +1,8 @@
-'use client';
-import React from 'react';
-import type { ComponentProps, ReactNode } from 'react';
-import { motion, useReducedMotion } from 'motion/react';
-import { FacebookIcon, FrameIcon, InstagramIcon, LinkedinIcon, YoutubeIcon } from 'lucide-react';
+"use client";
+import React from "react";
+import type { ComponentProps, ReactNode } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { LinkedinIcon, MailIcon, PhoneIcon, MapPinIcon } from "lucide-react";
 
 interface FooterLink {
 	title: string;
@@ -17,39 +17,40 @@ interface FooterSection {
 
 const footerLinks: FooterSection[] = [
 	{
-		label: 'Product',
+		label: "Nos Services",
 		links: [
-			{ title: 'Features', href: '#features' },
-			{ title: 'Pricing', href: '#pricing' },
-			{ title: 'Testimonials', href: '#testimonials' },
-			{ title: 'Integration', href: '/' },
+			{ title: "Support France/Europe", href: "#support-france" },
+			{ title: "Support Pays", href: "#support-pays" },
+			{ title: "Support Zones Économiques", href: "#support-zones" },
+			{ title: "Structuration Financière", href: "#structuration" },
 		],
 	},
 	{
-		label: 'Company',
+		label: "Zones d'Intervention",
 		links: [
-			{ title: 'FAQs', href: '/faqs' },
-			{ title: 'About Us', href: '/about' },
-			{ title: 'Privacy Policy', href: '/privacy' },
-			{ title: 'Terms of Services', href: '/terms' },
+			{ title: "Afrique de l'Ouest (CEDEAO)", href: "#cedeao" },
+			{ title: "Afrique Centrale (CEMAC)", href: "#cemac" },
+			{ title: "Afrique de l'Est (COMESA)", href: "#comesa" },
+			{ title: "Afrique Australe (SADC)", href: "#sadc" },
+			{ title: "Maghreb (UMA)", href: "#uma" },
 		],
 	},
 	{
-		label: 'Resources',
+		label: "À Propos",
 		links: [
-			{ title: 'Blog', href: '/blog' },
-			{ title: 'Changelog', href: '/changelog' },
-			{ title: 'Brand', href: '/brand' },
-			{ title: 'Help', href: '/help' },
+			{ title: "Notre Équipe", href: "#equipe" },
+			{ title: "Méthodologie", href: "#methodologie" },
+			{ title: "Confidentialité (NDA)", href: "#nda" },
+			{ title: "Contact", href: "#contact" },
 		],
 	},
 	{
-		label: 'Social Links',
+		label: "Contact",
 		links: [
-			{ title: 'Facebook', href: '#', icon: FacebookIcon },
-			{ title: 'Instagram', href: '#', icon: InstagramIcon },
-			{ title: 'Youtube', href: '#', icon: YoutubeIcon },
-			{ title: 'LinkedIn', href: '#', icon: LinkedinIcon },
+			{ title: "Email", href: "mailto:contact@silenxis.com", icon: MailIcon },
+			{ title: "Téléphone", href: "tel:+33100000000", icon: PhoneIcon },
+			{ title: "Paris, France", href: "#", icon: MapPinIcon },
+			{ title: "LinkedIn", href: "#", icon: LinkedinIcon },
 		],
 	},
 ];
@@ -61,9 +62,13 @@ export function Footer() {
 
 			<div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
 				<AnimatedContainer className="space-y-4">
-					<FrameIcon className="size-8" />
-					<p className="text-muted-foreground mt-8 text-sm md:mt-0">
-						© {new Date().getFullYear()} Asme. All rights reserved.
+					<div className="text-2xl font-bold">SILENXIS</div>
+					<p className="text-muted-foreground mt-4 text-sm max-w-xs">
+						Votre partenaire stratégique pour sécuriser et accélérer votre
+						expansion internationale avec expertise et confidentialité.
+					</p>
+					<p className="text-muted-foreground mt-8 text-xs">
+						© {new Date().getFullYear()} SILENXIS. Tous droits réservés.
 					</p>
 				</AnimatedContainer>
 
@@ -71,7 +76,7 @@ export function Footer() {
 					{footerLinks.map((section, index) => (
 						<AnimatedContainer key={section.label} delay={0.1 + index * 0.1}>
 							<div className="mb-10 md:mb-0">
-								<h3 className="text-xs">{section.label}</h3>
+								<h3 className="text-xs font-semibold">{section.label}</h3>
 								<ul className="text-muted-foreground mt-4 space-y-2 text-sm">
 									{section.links.map((link) => (
 										<li key={link.title}>
@@ -92,15 +97,19 @@ export function Footer() {
 			</div>
 		</footer>
 	);
-};
+}
 
 type ViewAnimationProps = {
 	delay?: number;
-	className?: ComponentProps<typeof motion.div>['className'];
+	className?: ComponentProps<typeof motion.div>["className"];
 	children: ReactNode;
 };
 
-function AnimatedContainer({ className, delay = 0.1, children }: ViewAnimationProps) {
+function AnimatedContainer({
+	className,
+	delay = 0.1,
+	children,
+}: ViewAnimationProps) {
 	const shouldReduceMotion = useReducedMotion();
 
 	if (shouldReduceMotion) {
@@ -109,8 +118,8 @@ function AnimatedContainer({ className, delay = 0.1, children }: ViewAnimationPr
 
 	return (
 		<motion.div
-			initial={{ filter: 'blur(4px)', translateY: -8, opacity: 0 }}
-			whileInView={{ filter: 'blur(0px)', translateY: 0, opacity: 1 }}
+			initial={{ filter: "blur(4px)", translateY: -8, opacity: 0 }}
+			whileInView={{ filter: "blur(0px)", translateY: 0, opacity: 1 }}
 			viewport={{ once: true }}
 			transition={{ delay, duration: 0.8 }}
 			className={className}
@@ -118,4 +127,5 @@ function AnimatedContainer({ className, delay = 0.1, children }: ViewAnimationPr
 			{children}
 		</motion.div>
 	);
-};
+}
+
