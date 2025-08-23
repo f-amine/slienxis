@@ -11,8 +11,8 @@ export function HeroSection() {
 		<>
 			<main className="overflow-x-hidden">
 				<section>
-					<div className="pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-44">
-						<div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
+					<div className="pb-14 pt-12 md:pb-18 lg:pb-22 lg:pt-24">
+						<div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block gap-10">
 							<div className="mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
 								<h1 className="mt-8 max-w-2xl text-balance text-4xl font-bold md:text-5xl lg:mt-16 xl:text-6xl">
 									SILENXIS – Stratégie, Finance & Sécurisation Internationale
@@ -77,7 +77,7 @@ export function HeroSection() {
 						</div>
 					</div>
 				</section>
-				<section className="bg-background pb-16 md:pb-32">
+				<section className="bg-background pb-8 md:pb-10">
 					<div className="group relative m-auto max-w-6xl px-6">
 						<div className="flex flex-col items-center md:flex-row">
 							<div className="md:max-w-44 md:border-r md:pr-6">

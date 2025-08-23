@@ -2,7 +2,7 @@ import { ChartBar, FileText, Globe, Shield, Target } from "lucide-react";
 import RadialOrbitalTimeline from "../ui/radial-orbital-timeline";
 export function Methodology() {
 	return (
-		<div className="py-20">
+		<div className="">
 			<div className="max-w-7xl mx-auto px-6">
 				<div className="grid lg:grid-cols-2 gap-12 items-center">
 					<div>

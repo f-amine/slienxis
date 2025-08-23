@@ -41,8 +41,7 @@ export default function Home() {
 	return (
 		<div className="">
 			<HeroSection />
-
-			<section className="py-20">
+			
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 					<FeatureSteps
 						features={features}
@@ -51,41 +50,32 @@ export default function Home() {
 						imageHeight="h-[500px]"
 					/>
 				</div>
-			</section>
-
-			<section className="py-20 bg-muted/30">
+			
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 					<Methodology />
 				</div>
-			</section>
-
+			
 			<InternationalPresence />
-
-			<section className="py-20">
+			
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 					<ServicesGrid />
 				</div>
-			</section>
-
+			
 			<TeamSection />
-
-			<section className="py-20 bg-muted/30">
+			
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-					<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 text-center">
+					<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center">
 						Témoignages Clients
 					</h2>
 					<StaggerTestimonials />
 				</div>
-			</section>
-
+			
 			<FAQ />
-
-			<section className="py-20 bg-muted/30">
+			
 				<div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 					<ContactSection />
 				</div>
-			</section>
-
+			
 			<Newsletter />
 		</div>
 	);
